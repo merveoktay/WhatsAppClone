@@ -23,21 +23,21 @@ import androidx.compose.ui.unit.sp
 import com.example.whatsappclone.R
 
 @Composable
-fun AppBarComponent(){
+fun AppBarComponent() {
     Row(
-        modifier= Modifier
+        modifier = Modifier
             .fillMaxWidth()
             .height(60.dp)
             .background(MaterialTheme.colorScheme.primary)
             .padding(16.dp),
         verticalAlignment = Alignment.CenterVertically
-    ){
+    ) {
         Text(
-            text= stringResource(id = R.string.whatsapp_title),
-            style= TextStyle(
+            text = stringResource(id = R.string.whatsapp_title),
+            style = TextStyle(
                 fontSize = 20.sp,
                 fontWeight = FontWeight.SemiBold,
-                color=MaterialTheme.colorScheme.tertiary
+                color = MaterialTheme.colorScheme.tertiary
             )
         )
         Spacer(modifier = Modifier.weight(1f))
@@ -48,13 +48,19 @@ fun AppBarComponent(){
         IconComponent(R.drawable.ic_menu)
     }
 }
+
 @Composable
 fun IconComponent(drawableId: Int) {
 
-    Icon(painter = painterResource(id = drawableId), contentDescription = "",tint=MaterialTheme.colorScheme.tertiary)
+    Icon(
+        painter = painterResource(id = drawableId),
+        contentDescription = "",
+        tint = MaterialTheme.colorScheme.tertiary
+    )
 }
+
 @Preview
 @Composable
-fun AppBarComponentPreview(){
-AppBarComponent()
+fun AppBarComponentPreview() {
+    AppBarComponent()
 }
