@@ -13,3 +13,4 @@ val tabs=listOf(
 enum class Tabs(val value:String){
     CHATS("Chats"),STATUS("Status"),CALLS("Calls")
 }
+const val INITIAL_SCREEN_INDEX=0

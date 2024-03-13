@@ -2,7 +2,13 @@
 <project version="4">
   <component name="deploymentTargetDropDown">
     <value>
+      <entry key="MessageHeaderPreview">
+        <State />
+      </entry>
       <entry key="TabsComponentPreview">
+        <State />
+      </entry>
+      <entry key="UserDetailsPreview">
         <State />
       </entry>
       <entry key="app">
