@@ -1,12 +1,14 @@
 package com.example.whatsappclone.ui.components
 
 import android.icu.text.CaseMap.Title
+import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.pager.PagerState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Tab
@@ -30,8 +32,11 @@ import androidx.compose.ui.unit.sp
 import com.example.whatsappclone.data.TabData
 import com.example.whatsappclone.data.tabs
 
+@OptIn(ExperimentalFoundationApi::class)
 @Composable
-fun TabsComponent() {
+fun TabsComponent(initialIndex:Int=0,
+                  pagerState:PagerState,
+                  onTabSelected:(Int)->Unit) {
     var selectedIndex by remember {
         mutableStateOf(0)
     }
@@ -51,6 +56,7 @@ fun TabsComponent() {
         tabs.forEachIndexed { index, tabData ->
             Tab(selected = index == selectedIndex, onClick = {
                 selectedIndex = index
+                onTabSelected(selectedIndex)
             }, text = {
                 TabContent(tabData = tabData)
             })
@@ -95,8 +101,3 @@ fun TabWithUnreadCount(tabData: TabData) {
     }
 }
 
-@Preview
-@Composable
-fun TabsComponentPreview() {
-    TabsComponent()
-}
