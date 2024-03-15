@@ -10,18 +10,18 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 
 @Composable
-fun CallsScreen() {
+fun CallsScreen(){
     Column(
-        modifier = Modifier.fillMaxSize(),
+        modifier= Modifier.fillMaxSize(),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
-    ) {
+    ){
         Text(text = "Calls Screen")
     }
 }
 
 @Preview(showBackground = true)
 @Composable
-fun CallsScreenPreview() {
+fun CallsScreenPreview(){
     CallsScreen()
 }
